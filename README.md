@@ -47,5 +47,5 @@ export interface NumberOptions {
     minValue?: number
 }
 
-getBoolean(key: string, defaultValue: boolean | undefined = undefined):boolean
+getBoolean(key: string, defaultValue: boolean | undefined = undefined): boolean
 ```

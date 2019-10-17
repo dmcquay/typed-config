@@ -38,7 +38,7 @@ export default function typedConfig(env: ProcessEnv) {
             return Math.floor(this.getNumber(key))
         },
 
-        getBoolean(key: string, defaultValue: boolean | undefined = undefined):boolean {
+        getBoolean(key: string, defaultValue: boolean | undefined = undefined): boolean {
             const val = env[key]
             if (val === undefined) {
                 if (defaultValue !== undefined) {
