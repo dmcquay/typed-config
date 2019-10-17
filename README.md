@@ -2,7 +2,7 @@ This is just an idea. Though it is tested, it is not intended for others to use 
 
 ## Example usage
 
-```
+```ts
 import typedConfig from './config'
 
 const config = typedConfig(process.env)
