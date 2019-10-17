@@ -2,13 +2,18 @@ export interface ProcessEnv {
     [key: string]: string | undefined
 }
 
-interface Options {
+export interface StringOptions {
     pattern?: RegExp
+}
+
+export interface NumberOptions {
+    maxValue?: number,
+    minValue?: number
 }
 
 export default function typedConfig(env: ProcessEnv) {
     return {
-        getString(key: string, opts: Options = {}):string {
+        getString(key: string, opts: StringOptions = {}): string {
             const val = env[key]
             if (val === undefined) throw new Error(`Invalid configuration: ${key} is undefined`)
             if (opts.pattern) {
@@ -19,15 +24,21 @@ export default function typedConfig(env: ProcessEnv) {
             return val
         },
 
-        getInt(key: string):number {
+        getNumber(key: string, opts: NumberOptions = {}): number {
             const val = env[key]
             if (val === undefined) throw new Error(`Invalid configuration: ${key} is undefined`)
-            const intVal = parseInt(val, 10)
-            if (isNaN(intVal)) throw new Error(`Invalid configuration: ${key} is not a number`)
-            return intVal
+            const numVal = parseFloat(val)
+            if (isNaN(numVal)) throw new Error(`Invalid configuration: ${key} is not a number`)
+            if (opts.maxValue !== undefined && numVal > opts.maxValue) throw new Error(`Invalid configuration: value '${val}' for key '${key}' is larger than max value of ${opts.maxValue}`)
+            if (opts.minValue !== undefined && numVal < opts.minValue) throw new Error(`Invalid configuration: value '${val}' for key '${key}' is less than min value of ${opts.minValue}`)
+            return numVal
         },
 
-        getBool(key: string, defaultValue: boolean | undefined = undefined):boolean {
+        getInteger(key: string, opts: NumberOptions = {}): number {
+            return Math.floor(this.getNumber(key))
+        },
+
+        getBoolean(key: string, defaultValue: boolean | undefined = undefined):boolean {
             const val = env[key]
             if (val === undefined) {
                 if (defaultValue !== undefined) {
