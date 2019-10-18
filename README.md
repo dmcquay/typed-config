@@ -13,7 +13,7 @@ export default {
     apiBaseUrl: config.getString('API_BASE_URL', {pattern: /^https?:\/\/\w+$/}),
     enableFeatureX: config.getBool('ENABLE_FEATURE_X', false),
     isDev: config.getBool('IS_DEV'),
-    maxWidgetCount: config.getInt('MAX_WIDGET_COUNT')
+    maxWidgetCount: config.getInteger('MAX_WIDGET_COUNT')
 }
 ```
 
