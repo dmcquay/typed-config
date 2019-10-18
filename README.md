@@ -12,7 +12,7 @@ const config = typedConfig(process.env)
 export default {
     apiBaseUrl: config.getString('API_BASE_URL', {pattern: /^https?:\/\/\w+$/}),
     enableFeatureX: config.getBoolean('ENABLE_FEATURE_X', false),
-    isDev: config.getBool('IS_DEV'),
+    isDev: config.getBoolean('IS_DEV'),
     maxWidgetCount: config.getInteger('MAX_WIDGET_COUNT')
 }
 ```
