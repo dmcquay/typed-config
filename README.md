@@ -33,16 +33,16 @@ If any of the following validations fails, it will throw with a helpful message:
 # API
 
 ```ts
-getString(key: string, opts: StringOptions = {}): string
+function getString(key: string, opts: StringOptions = {}): string
 
 interface StringOptions {
     pattern?: RegExp
 }
 
-getNumber(key: string, opts: NumberOptions = {}): number
-getInteger(key: string, opts: NumberOptions = {}): number
+function getNumber(key: string, opts: NumberOptions = {}): number
+function getInteger(key: string, opts: NumberOptions = {}): number
 
-export interface NumberOptions {
+interface NumberOptions {
     maxValue?: number,
     minValue?: number
 }
