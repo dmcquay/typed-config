@@ -1,12 +1,13 @@
 {
-  "name": "typed-config",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@dmcquay/typed-config",
+  "version": "0.0.1",
+  "description": "Validate your config. Make TypeScript aware of the resulting types.",
   "main": "dist/config.js",
   "types": "dist/config.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "mocha --require ts-node/register **/*.test.ts"
+    "test": "mocha --require ts-node/register **/*.test.ts",
+    "prepublish": "npm test"
   },
   "keywords": [],
   "author": "",
