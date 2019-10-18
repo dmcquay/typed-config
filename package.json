@@ -2,8 +2,10 @@
   "name": "typed-config",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/config.js",
+  "types": "dist/config.d.ts",
   "scripts": {
+    "build": "tsc",
     "test": "mocha --require ts-node/register **/*.test.ts"
   },
   "keywords": [],
