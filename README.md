@@ -1,11 +1,15 @@
 This is just an idea. Though it is tested, it is not intended for others to use yet. I'm just playing with the idea to see if it seems worthwhile.
 
+## Install
+
+`npm install -S @dmcquay/typed-config`
+
 ## Example usage
 
 You might create a file called `config.ts` with the following contents.
 
 ```ts
-import typedConfig from './config'
+import typedConfig from '@dmcquay/typed-config'
 
 const config = typedConfig(process.env)
 
