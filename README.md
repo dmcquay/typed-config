@@ -34,13 +34,13 @@ export default {
 function getString(key: string, opts: StringOptions = {}): string
 function getNumber(key: string, opts: NumberOptions = {}): number
 function getInteger(key: string, opts: NumberOptions = {}): number
-function getBoolean(key: string, defaultValue: boolean | undefined = undefined): boolean
+function getBoolean(key: string, defaultValue?: boolean): boolean
 
-interface StringOptions {
+interface IStringOptions {
     pattern?: RegExp
 }
 
-interface NumberOptions {
+interface INumberOptions {
     maxValue?: number,
     minValue?: number
 }
