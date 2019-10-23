@@ -1,6 +1,6 @@
 {
   "name": "@dmcquay/typed-config",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Validate your config. Make TypeScript aware of the resulting types.",
   "main": "dist/config.js",
   "types": "dist/config.d.ts",
