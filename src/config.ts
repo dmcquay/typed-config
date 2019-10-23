@@ -11,7 +11,7 @@ export interface NumberOptions {
     minValue?: number
 }
 
-export default function typedConfig(env: ProcessEnv) {
+export default function typedConfig(env: ProcessEnv = process.env) {
     return {
         getString(key: string, opts: StringOptions = {}): string {
             const val = env[key]
