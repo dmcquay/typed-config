@@ -1,4 +1,9 @@
-This is just an idea. Though it is tested, it is not intended for others to use yet. I'm just playing with the idea to see if it seems worthwhile.
+typed-config is a very simple and opinionated library for getting config values from
+the environment. The design goals are:
+
+- Get config values from process.env
+- Validate them and provide useful error messages
+- Return the values with meaningful types
 
 ## Install
 
@@ -11,7 +16,7 @@ You might create a file called `config.ts` with the following contents.
 ```ts
 import typedConfig from '@dmcquay/typed-config'
 
-const config = typedConfig(process.env)
+const config = typedConfig()
 
 export default {
     apiBaseUrl: config.getString('API_BASE_URL', {pattern: /^https?:\/\/\w+$/}),
