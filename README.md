@@ -1,5 +1,5 @@
 typed-config is a very simple and opinionated library for getting config values from
-the environment. The design goals are:
+the environment in TypeScript. The design goals are:
 
 - Get config values from process.env
 - Validate them and provide useful error messages
