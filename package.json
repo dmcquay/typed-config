@@ -1,12 +1,12 @@
 {
   "name": "@dmcquay/typed-config",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Validate your config. Make TypeScript aware of the resulting types.",
   "main": "dist/config.js",
   "types": "dist/config.d.ts",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/dmcquay/typed-config.git"
+    "type": "git",
+    "url": "https://github.com/dmcquay/typed-config.git"
   },
   "scripts": {
     "build": "tsc",
