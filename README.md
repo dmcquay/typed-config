@@ -28,22 +28,14 @@ export default {
 }
 ```
 
-Then from other files, you read config by importing `config.ts`.
-
-The apiBaseUrl key will be a string type, isDev a bool and maxWidgetCount a number. TypeScript will be aware of this.
-
-If any of the following validations fails, it will throw with a helpful message:
-
-- API_BASE_URL is undefined
-- API_BASE_URL doesn't match the provided pattern
-- ENABLE_FEATURE_X is not 'true' or 'false'
-- IS_DEV is not 'true' or 'false'
-- IS_DEV is not defined (because no default is provided)
-- MAX_WIDGET_COUNT is not defined or is not a number
-
-# API
+## API
 
 ```ts
+function getString(key: string, opts: StringOptions = {}): string
+function getNumber(key: string, opts: NumberOptions = {}): number
+function getInteger(key: string, opts: NumberOptions = {}): number
+function getBoolean(key: string, defaultValue: boolean | undefined = undefined): boolean
+
 interface StringOptions {
     pattern?: RegExp
 }
@@ -52,9 +44,4 @@ interface NumberOptions {
     maxValue?: number,
     minValue?: number
 }
-
-function getString(key: string, opts: StringOptions = {}): string
-function getNumber(key: string, opts: NumberOptions = {}): number
-function getInteger(key: string, opts: NumberOptions = {}): number
-function getBoolean(key: string, defaultValue: boolean | undefined = undefined): boolean
 ```
