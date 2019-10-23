@@ -3,6 +3,7 @@
   "version": "0.0.9",
   "description": "Validate your config. Make TypeScript aware of the resulting types.",
   "main": "dist/config.js",
+  "files": ["dist/**/*"],
   "types": "dist/config.d.ts",
   "repository": {
     "type": "git",
