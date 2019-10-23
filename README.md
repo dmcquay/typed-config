@@ -44,19 +44,17 @@ If any of the following validations fails, it will throw with a helpful message:
 # API
 
 ```ts
-function getString(key: string, opts: StringOptions = {}): string
-
 interface StringOptions {
     pattern?: RegExp
 }
-
-function getNumber(key: string, opts: NumberOptions = {}): number
-function getInteger(key: string, opts: NumberOptions = {}): number
 
 interface NumberOptions {
     maxValue?: number,
     minValue?: number
 }
 
-getBoolean(key: string, defaultValue: boolean | undefined = undefined): boolean
+function getString(key: string, opts: StringOptions = {}): string
+function getNumber(key: string, opts: NumberOptions = {}): number
+function getInteger(key: string, opts: NumberOptions = {}): number
+function getBoolean(key: string, defaultValue: boolean | undefined = undefined): boolean
 ```
