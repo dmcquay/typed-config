@@ -5,6 +5,8 @@ the environment. The design goals are:
 - Validate them and provide useful error messages
 - Return the values with meaningful types
 
+![@dmcquay/typed-config usage example](http://g.recordit.co/IyLnMGtWm9.gif)
+
 ## Install
 
 `npm install -S @dmcquay/typed-config`
